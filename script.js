@@ -1,17 +1,17 @@
-console.log("test");
+//전체 문자열에서 특정 문자값을 기준으로 분리해서 배열로 반환
+const span_text = document.querySelector("span").innerText;
+console.log(span_text);  //'2024-09-19'
 
-const h1 = document.querySelector("h1");
-h1.innerText = "Test";
 
-const h2 = document.querySelector("h2");
-const linkURL = "https://www.naver.com";
-h2.innerHTML = `<a href=${linkURL}>naver</a>`;
+const text_arr = span_text.split('-')
+console.log(text_arr); //script.js:7 (3) ['2024', '09', '19']
 
-const h3 = document.querySelector('h3');
-const h3_text = h3.innerText;
-//h3 문자열을 0위치에서ㅜ터 50번째 위치까지 짜른뒤
-//짜른 문자열을 다시 h3.innerText 프로퍼티에 대입해서 적용
-h3.innertext = h3_text.substring(0, 50)
+//배열값은 특정 문자열로 이어서 하나의 문자열로 반환하는 함수 Join
+const new_text = text_arr.join('.');
+console.log(new_text);  // '2024.09.19'
+//일반적으로 많이 쓰이는 작업임.
 
-//console.log(h3.innerText.length);
-//h3.innerText
+//위의 split과 join을 한번에 연산 간소화하는 방법
+const h2_text = document.querySelector("h2").innerText;
+const new_h2 = h2_text.split(" ").join("/");
+console.log(new_h2);
