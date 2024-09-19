@@ -15,3 +15,25 @@ console.log(new_text);  // '2024.09.19'
 const h2_text = document.querySelector("h2").innerText;
 const new_h2 = h2_text.split(" ").join("/");
 console.log(new_h2);
+
+//미션 위의 구문을 다음과 같은 형태의 함수로 패키징
+//changeText('h2',' ','/')
+//changeText(selector, splitChar, joinChar)
+
+changeText('h2', ' ', '/')
+
+function changeText(selector, splitChar, joinChar) {
+  const elementText = document.querySelector(selector);
+  const newText = elementText.split(splitChar).join(joinChar);
+  document.querySelector(selector).innerText = newText;
+}
+
+
+function changeText(elem, spc1, spc2) {
+  const el = document.querySelector(elem);
+  const el_text = el.innerText;
+  el.innerText = el_text.split(spc1).join(spc2);
+}
+changeText("h1", ".", "-");
+changeText("h2", " ", " / ");
+changeText("h3", "_", "+");
