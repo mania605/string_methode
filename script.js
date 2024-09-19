@@ -31,9 +31,14 @@ function changeText(selector, splitChar, joinChar) {
 
 function changeText(elem, spc1, spc2) {
   const el = document.querySelector(elem);
-  const el_text = el.innerText;
-  el.innerText = el_text.split(spc1).join(spc2);
+  //문자열.trim() : 문자열 앞뒤의 빈칸을 제거해서 정리
+  const eltext = el.innerText.trim();
+  el.innerText = eltext.split(spc1).join(spc2);
 }
+
 changeText("h1", ".", "-");
 changeText("h2", " ", " / ");
 changeText("h3", "_", "+");
+
+
+
